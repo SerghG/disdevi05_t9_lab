@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     private PlayerController motor;
+    public WeaponController weapon;
     private PlayerInput playerInput;
     private PlayerInput.OnFootActions onFoot;
     private PlayerLook look;
@@ -17,9 +18,11 @@ public class InputManager : MonoBehaviour
         onFoot = playerInput.OnFoot;
         
         motor = GetComponent<PlayerController>();
+        weapon = GetComponent<WeaponController>();
         look = GetComponent<PlayerLook>();
 
         onFoot.Jump.performed += ctx => motor.Saltar();
+        onFoot.Shoot.performed += ctx => weapon.Disparar();
     }
 
     void FixedUpdate()

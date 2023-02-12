@@ -12,9 +12,6 @@ public class PlayerController : MonoBehaviour
     public float vel = 5f;
     public float jumpHeigth = 3f;
 
-    public float cadenciaDisparo = 0.1f;
-    public float municion = 6;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +46,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Disparar(){
-        if(municion > 0){
-            municion--;
-        }
-    }
+   
 }

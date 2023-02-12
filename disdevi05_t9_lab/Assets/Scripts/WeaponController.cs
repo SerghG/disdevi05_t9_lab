@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float velocidadDisparo = 600f;
+    public int municion = 6;
+    public GameObject bulletPrefab;
+    public GameObject bulletPoint;
+    public GameObject AudioController;
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    private void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Disparar(){
+        if(municion > 0){
+            GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, transform.rotation);
+            AudioController.GetComponent<AudioController>().PlaySFX(AudioController.GetComponent<AudioController>().SFXClips[0]);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * velocidadDisparo);
+            municion--;
+            Debug.Log("Munición restante:" + municion);
+        }
     }
 }
