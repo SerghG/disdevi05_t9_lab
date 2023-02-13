@@ -89,8 +89,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01026101, y: 0.010261014, z: 0.049392615}
-  m_Center: {x: -0.015019599, y: 0.050438117, z: 0.018832544}
+  m_Size: {x: 0.01026101, y: 0.010261014, z: 0.05312476}
+  m_Center: {x: -0.015019599, y: 0.050438117, z: 0.018947018}
 --- !u!114 &-4684459101763689647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,5 +103,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d156d97669c8a418c6c3a50954e713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameController: {fileID: 8570383686725145581, guid: eae3fbe761fc4c94ea06522d6febfd8d, type: 3}
-  AudioController: {fileID: 6914213860224501823, guid: cf27f566637adcc4ea148b3e6411f790, type: 3}

@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public int score = 0;
     public int balas;
     public GameObject Player;
-    private int winScore = 80;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
         balas = Player.GetComponent<WeaponController>().municion;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        UpdateMunicion();
     }
 
     // Update is called once per frame
@@ -28,7 +29,6 @@ public class GameController : MonoBehaviour
 
     public void AddScore(int newScore){
         score += newScore;
-        UpdateMunicion();
     }
 
     public void UpdateScore(){
@@ -38,13 +38,6 @@ public class GameController : MonoBehaviour
      public void UpdateMunicion(){
         balas = Player.GetComponent<WeaponController>().municion;
         BalasText.text = "" + balas;
-        if(balas == 0){
-            if(score >= 60){
-                ScoreText.text = "WIN";
-            } else {
-                ScoreText.text = "LOSE";
-            }
-        }
     }
 
 }

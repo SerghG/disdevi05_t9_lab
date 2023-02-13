@@ -15,6 +15,7 @@ public class bulletScript : MonoBehaviour
         Debug.Log(""+collision.collider.tag);
         if(collision.collider.CompareTag("Suelo") || collision.collider.CompareTag("Pared")){
             Destroy(this.gameObject);
+            GameObject.Find("GameController").GetComponent<GameController>().UpdateMunicion();
             Debug.Log("Colision Suelo o Pared");
         } 
         if(collision.collider.CompareTag("Enemy")){
@@ -22,6 +23,7 @@ public class bulletScript : MonoBehaviour
             Destroy(this.gameObject);
             GameObject.Find("GameController").GetComponent<GameController>().AddScore(20);
             GameObject.Find("AudioPlayer").GetComponent<AudioController>().PlaySFX(GameObject.Find("AudioPlayer").GetComponent<AudioController>().SFXClips[1]);
+            GameObject.Find("GameController").GetComponent<GameController>().UpdateMunicion();
             Debug.Log("Colision Enemigo");
         }
         if(collision.collider.CompareTag("Civil")){
@@ -29,6 +31,7 @@ public class bulletScript : MonoBehaviour
             Destroy(this.gameObject);
             GameObject.Find("GameController").GetComponent<GameController>().AddScore(-20);
             GameObject.Find("AudioPlayer").GetComponent<AudioController>().PlaySFX(GameObject.Find("AudioPlayer").GetComponent<AudioController>().SFXClips[1]);
+            GameObject.Find("GameController").GetComponent<GameController>().UpdateMunicion();
             Debug.Log("Colision civil");
         }
     }
